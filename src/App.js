@@ -25,8 +25,6 @@ export default function App() {
     })
   }, []);
 
-
-  
   const handleSelect = e => {
     setSelectedSeason(e.value);
   };
@@ -40,10 +38,9 @@ export default function App() {
         <h1>{show.name}</h1>
         {parse(show.summary)}
         <Episodes episodes={episodes} />
-        <Select options={options} onChange={(values) => this.setValues(values)} />S
+        <Select options={options} onChange={(values) => this.setValues(values)} />
       </div>
     
   );
-
 
 }
