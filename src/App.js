@@ -25,9 +25,9 @@ export default function App() {
     })
   }, []);
 
-  const handleSelect = e => {
+ const handleSelect = e => {
     setSelectedSeason(e.value);
-  };
+  }; 
 
   if (!show) {
     return <h2>Fetching data...</h2>;
@@ -38,7 +38,11 @@ export default function App() {
         <h1>{show.name}</h1>
         {parse(show.summary)}
         <Episodes episodes={episodes} />
-        <Select options={options} onChange={(values) => this.setValues(values)} />
+        <Dropdown
+          data-testid = 'dropdown'
+          options={Object.keys(seasons)}
+          onChange={handleSelect}
+          value={selectedSeason || "Select a Season Now!"} />
       </div>
     
   );
